@@ -4,7 +4,7 @@ name: 'Task: Schedule a DSX User Access Report'
 
 on:
   schedule:
-    - cron: 08 05 * * *
+    - cron: 09 17 * * *
 
 jobs:
   create_issue:
