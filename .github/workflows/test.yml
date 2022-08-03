@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: 'Task: Schedule a DSX User Access Report'
+
+on:
+  schedule:
+    - cron: 08 05 * * *
+
+jobs:
+  create_issue:
+    name: Create a ticket for DSX User Access Report
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create issue to track User Access weekly Report
+        uses: actions/github-script@v5
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Weekly DSX User Access Report',
+              body: 'Please follow [this playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).',
+              labels: ['chore :broom:']
+            })
+
+        
