@@ -5,7 +5,7 @@ name: 'Task: Schedule a DSX User Access Report'
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   create_issue:
