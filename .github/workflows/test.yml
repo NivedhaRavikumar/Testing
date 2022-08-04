@@ -39,7 +39,7 @@ jobs:
     if: needs.check_has_command_text.outputs.body_has_command_text == 'false'
     steps:
       - name: "Add issue to Project board"
-        uses: actions/add-to-project@v5
+        uses: actions/add-to-project@main
         with:
           project-url: https://github.com/users/NivedhaRavikumar/projects/2
           github-token: ${{ secrets.MY_PAT }}
