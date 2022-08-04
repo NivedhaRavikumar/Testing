@@ -36,7 +36,7 @@ jobs:
   add_to_project:    
     runs-on: ubuntu-latest
     needs: check_has_command_text
-    if: needs.check_has_command_text.outputs.comment_has_command_text == 'true'
+    if: needs.check_has_command_text.outputs.body_has_command_text == 'true'
     steps:
       - name: "Add issue to Project board"
         uses: actions/add-to-project@RELEASE_VERSION
