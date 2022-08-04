@@ -41,6 +41,6 @@ jobs:
       - name: "Add issue to Project board"
         uses: actions/add-to-project@main
         with:
-          project-url: https://github.com/users/NivedhaRavikumar/projects/2
+          project-url: https://github.com/users/NivedhaRavikumar/projects/2/
           github-token: ${{ secrets.MY_PAT }}
         
