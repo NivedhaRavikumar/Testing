@@ -25,11 +25,7 @@ jobs:
               title: 'Weekly DSX User Access Report',
               body: 'Please follow [this playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).',
               labels: ['chore :broom:']                            
-            })  
-  
-  add_to_project:    
-    runs-on: ubuntu-latest    
-    steps:
+            })    
       - name: "Add issue to Project board"
         uses: actions/add-to-project@main
         with:
