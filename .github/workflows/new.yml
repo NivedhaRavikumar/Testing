@@ -1,0 +1,101 @@
+name: "(on comment) Add incident issues to tracker"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check_has_command_text:
+    runs-on: ubuntu-latest
+    outputs:
+      comment_has_command_text: ${{ steps.check_comment_has_command_text.outputs.comment_has_command_text }}
+      body_has_command_text: ${{ steps.check_body_has_command_text.outputs.body_has_command_text }}
+      is_milestoned_event: ${{ steps.check_is_milestoned_event.outputs.is_milestoned_event }}
+    steps:
+      - id: check_comment_has_command_text
+        run: echo "::set-output name=comment_has_command_text::${{ !github.event.issue.pull_request && github.event.comment.body == '/add-to-postmortem-tracker' }}"
+      - id: check_body_has_command_text
+        run: echo "::set-output name=body_has_command_text::${{ github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.body, '/add-to-postmortem-tracker') }}"
+      - id: check_is_milestoned_event
+        run: echo "::set-output name=is_milestoned_event::${{ github.event_name == 'issues' && github.event.action == 'milestoned' && contains(github.event.issue.milestone.title, '[postmortem-tracker]') }}"
+  add_command_as_comment:
+    runs-on: ubuntu-latest
+    needs: check_has_command_text
+    if: needs.check_has_command_text.outputs.body_has_command_text == 'true'
+    steps:
+      - name: "Add command comment."
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.MY_PAT }}
+          script: |
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '/add-to-postmortem-tracker'
+            });
+  add_to_project:
+    runs-on: ubuntu-latest
+    needs: check_has_command_text
+    if: needs.check_has_command_text.outputs.comment_has_command_text == 'true'
+    steps:
+      - name: "Add issue to postmortem tracker"
+        uses: actions/add-to-project@main
+        with:
+          project-url: https://github.com/users/NivedhaRavikumar/projects/2/
+          github-token: ${{ secrets.MY_PAT }}
+      - name: "Add label to PM issue, create PM action item milestone, add comment to issue."
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.MY_PAT }}
+          script: |
+            await github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['pi-postmortem']
+            })
+            pm_issue = await github.rest.issues.get({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
+            const max_milestone_length = 200
+            const issue_title = pm_issue.data.title.substr(0, max_milestone_length)
+            milestone = await github.rest.issues.createMilestone({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issue_title + " [postmortem-tracker]",
+              description: "Milestone for action items of postmortem [" + issue_title + "](" + pm_issue.data.html_url + ")."
+            });
+            const command_tag = '`/add-to-postmortem-tracker`'
+            const label = '`pi-postmortem`'
+            const comment_string = `[bot] I see a ${command_tag}. I've done the following things:
+              * Added this issue to the [postmortem tracker](https://github.com/orgs/cadedaniel-org/projects/1/views/10).
+              * Created [a milestone for action items](https://github.com/cadedaniel-org/issues/milestone/${milestone.data.number}).
+              * Added the label [${label}](https://github.com/cadedaniel-org/issues/labels/pi-postmortem) to this issue.`
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment_string
+            });
+  add_milestoned_issue_to_project:
+    runs-on: ubuntu-latest
+    needs: check_has_command_text
+    if: needs.check_has_command_text.outputs.is_milestoned_event == 'true'
+    steps:
+      - name: "Add issue to postmortem tracker"
+        uses: actions/add-to-project@main
+        with:
+          project-url: https://github.com/users/NivedhaRavikumar/projects/2/
+          github-token: ${{ secrets.MY_PAT }}
+      - name: "Add label"
+        uses: github/issue-labeler@v2.4.1
+        with:
+          repo-token: "${{ secrets.MY_PAT }}"
+          configuration-path: does-not-exist
+          enable-versioned-regex: 1
+          versioned-regex: 'this-versioned-regex-should-never-match'
+          body-missing-regex-label: 'pi-postmortem-action-item'
