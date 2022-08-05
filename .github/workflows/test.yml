@@ -23,7 +23,14 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Weekly DSX User Access Report',
-              body: 'Please follow [this playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).',
+              body: '<!--
+                    Please add this issue to the 'DSX SRE board' and set the appropriate values for below items
+                    - Set Service Class as Fixed date
+                    - Work Item Type as Chore
+                    - Board as live
+                    - Milestone as End of the week
+                    -->
+                    Please follow [this playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).',
               labels: ['chore :broom:']                            
             })                
       - name: "Add issue to Project board"
