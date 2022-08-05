@@ -26,21 +26,14 @@ jobs:
               body: 'Please follow [this playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).',
               labels: ['chore :broom:']                            
             })  
-  check_has_command_text:
-    runs-on: ubuntu-latest
-    outputs:
-      body_has_command_text: ${{ steps.check_body_has_command_text.outputs.body_has_command_text }}   
-    steps:
-      - id: check_body_has_command_text
-        run: echo "::set-output name=body_has_command_text::${{ github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.body, 'Please follow [this playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).') }}"
+  
   add_to_project:    
-    runs-on: ubuntu-latest
-    needs: check_has_command_text
-    if: needs.check_has_command_text.outputs.body_has_command_text == 'false'
+    runs-on: ubuntu-latest    
     steps:
       - name: "Add issue to Project board"
         uses: actions/add-to-project@main
         with:
-          project-url: https://github.com/users/NivedhaRavikumar/projects/2/
-          github-token: ${{ secrets.MY_PAT }}
+          project: Sample
+          column: In Progress
+          repo-token: ${{ secrets.MY_PAT }}
         
