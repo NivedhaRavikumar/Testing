@@ -25,10 +25,16 @@ jobs:
               title: 'Weekly DSX User Access Report',
               body: 'Please follow [this playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).',
               labels: ['chore :broom:']                            
-            })    
+            })                
       - name: "Add issue to Project board"
-        uses: actions/add-to-project@main
-        with:
-          project-url: https://github.com/users/NivedhaRavikumar/projects/2
-          github-token: ${{ secrets.MY_PAT }}
+        uses: docker://takanabe/github-actions-automate-projects:v0.0.1
+        if: github.event_name == 'issues' && github.event.action == 'opened'
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
+          GITHUB_PROJECT_URL: https://github.com/users/NivedhaRavikumar/projects/2
+          GITHUB_PROJECT_COLUMN_NAME: To do
+        #uses: actions/add-to-project@main
+        #with:
+        #  project-url: https://github.com/users/NivedhaRavikumar/projects/2
+        #  github-token: ${{ secrets.MY_PAT }}
         
