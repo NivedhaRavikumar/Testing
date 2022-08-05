@@ -27,8 +27,7 @@ jobs:
               labels: ['chore :broom:']                            
             })                
       - name: "Add issue to Project board"
-        uses: docker://takanabe/github-actions-automate-projects:v0.0.1
-        if: github.event_name == 'issues' && github.event.action == 'opened'
+        uses: docker://takanabe/github-actions-automate-projects:v0.0.1        
         env:
           GITHUB_TOKEN: ${{ secrets.MY_PAT }}
           GITHUB_PROJECT_URL: https://github.com/users/NivedhaRavikumar/projects/2
