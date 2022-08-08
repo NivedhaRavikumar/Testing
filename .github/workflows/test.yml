@@ -24,8 +24,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Weekly DSX User Access Report',
-              body: "## Description \n\nTo create DSX User Access Weekly Report \n\n## :white_check_mark: Ticket Checklist \n- [ ] add ticket to `DSX SRE board` \n- [ ] set the `Service Class` as `Fixed date` \n- [ ] set the `Work Item Type` as `Chore` \n- [ ] set the `Board` as `Live` \n- [ ] Milestone should be set as current week Friday date, create if not exist (eg: 2022-08-12) \n\n## Report Generation \n\nPlease follow [dsx user access report playbook](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html).",
-              labels: ['chore :broom:']                            
+              body: "## Description \n\nTo create DSX User Access Weekly Report \n\n## :white_check_mark: Ticket Checklist \n- [ ] add ticket to `DSX SRE board` \n- [ ] set the `Service Class` as `Fixed date` \n- [ ] set the `Work Item Type` as `Chore` \n- [ ] set the `Board` as `Live` \n- [ ] Milestone should be set as current week Friday date, create if not exist (eg: 2022-08-12) \n\n## Report Generation \n\nPlease follow [Generate and Send weekly DSX All Users Access Report](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html) Playbook.",                                        
             })                
       - name: "Add issue to Project board"
         if: github.event_name == 'push'
