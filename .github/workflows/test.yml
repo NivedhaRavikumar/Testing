@@ -24,12 +24,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Weekly DSX User Access Report',
-              body: "## Description \n\nTo create DSX User Access Weekly Report \n\n
-              Please follow [Generate and Send weekly DSX All Users Access Report](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html) Playbook.\n\n
-              ## Ticket Checklist \n\n<details><summary>Checklist</summary>\n\n- [ ] add ticket to `DSX SRE board` \n
-              - [ ] set the `Service Class` as `Fixed date` \n- [ ] set the `Work Item Type` as `Chore` \n- [ ] set the `Board` as `Live` \n- [ ] Milestone should be set as current week Friday date, create if not exist (eg: 2022-08-12) \n\n</details>\n\n
-              ## :white_check_mark: Tasks \n\n- [ ] run query in azure for data download 1 and copy paste details in excel\n- [ ] run query in azure for data download 2 and copy paste details in excel\n- [ ] do sanity check for atleast 3 users.\n- [ ] check all fomulas and counts.\n\n
-              ## :checkered_flag: Acceptance Criteria\n\n- Weekly DSX all User Access Report is generated and shared with POs.",                                        
+              body: "## Description \n\nWe have to send a report which has all the information(like instruments added, new users , limits , tradebooks etc) of PROD to the POs every week. \n\nPlease follow [Generate and Send weekly DSX All Users Access Report](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html) Playbook.\n\n## :checkmark: Ticket Checklist \n\n<details><summary>Checklist</summary>\n\n- [ ] add ticket to `DSX SRE board` \n- [ ] set the `Service Class` as `Fixed date` \n- [ ] set the `Work Item Type` as `Chore` \n- [ ] set the `Board` as `Live` \n- [ ] Milestone should be set as current week Friday date, create if not exist (eg: 2022-08-12) \n\n</details>\n\n## :white_check_mark: Tasks \n\n- [ ] run query in azure for data download 1 and copy paste details in excel\n- [ ] run query in azure for data download 2 and copy paste details in excel\n- [ ] do sanity check for atleast 3 users.\n- [ ] check all fomulas and counts.\n\n## :checkered_flag: Acceptance Criteria\n\n- Weekly DSX all User Access Report is generated and shared with POS.",                                        
             })                
       - name: "Add issue to Project board"
         if: github.event_name == 'push'
