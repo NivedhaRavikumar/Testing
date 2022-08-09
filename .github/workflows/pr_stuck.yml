@@ -1,0 +1,27 @@
+name: 'Task: Check Stuck PRs'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:      
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/stale@v4
+        with:
+          days-before-close: -1
+          days-before-stale: 0.2
+          exempt-pr-labels: 'blocked :no_entry_sign:,help wanted :raised_hand:'
+          stale-pr-label: stuck
+          stale-pr-message: >-
+            This issue is stuck, since it hasn't been touched for 3 days.
+            
+            If progress has been made then please add a comment and remove the `stuck` label.
+            
+            Otherwise this ticket should be discussed in the standup and resources allocated
+            in order to keep it moving.
