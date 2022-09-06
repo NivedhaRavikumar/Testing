@@ -22,22 +22,10 @@ jobs:
           script: |
             const markdowntable = `
             ## Description 
+            
             We have to send a report which has all the information (like instruments added, new users , limits , tradebooks etc) of PROD to the POs every week.
+            
             Please follow [Generate and Send weekly DSX All Users Access Report](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html) Playbook.
-            ## Ticket Checklist
-            <details><summary>Checklist</summary>
-            - [ ] add ticket to `DSX SRE board`
-            - [ ] set the `Service Class` as `Fixed date`
-            - [ ] set the `Work Item Type` as `Chore`
-            - [ ] set the `Board` as `Live`
-            - [ ] Milestone should be set as current week Friday date, create if not exist (eg: 2022-08-12)
-            </details>
-            ## :white_check_mark: Tasks
-            - [ ] run query in azure for data download 1 and copy paste details in excel
-            - [ ] run query in azure for data download 2 and copy paste details in excel
-            - [ ] do sanity check for atleast 3 users\n- [ ] check all fomulas and counts
-            ## :checkered_flag: Acceptance Criteria
-            - Weekly DSX all User Access Report is generated and shared with POS.
             `
             await github.rest.issues.create({
               owner: context.repo.owner,
