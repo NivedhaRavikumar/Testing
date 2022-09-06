@@ -26,10 +26,22 @@ jobs:
             We have to send a report which has all the information (like instruments added, new users , limits , tradebooks etc) of PROD to the POs every week.
             
             Please follow [Generate and Send weekly DSX All Users Access Report](https://turbo-barnacle-04dc7c1a.pages.github.io/incidents/playbooks/dsx-all-users-access-report.html) Playbook.
+            
+            ## Ticket Checklist
+            
+            <details><summary>Checklist</summary>
+            
+            - [ ] add ticket to `DSX SRE board`
+            - [ ] set the `Service Class` as `Fixed date`
+            - [ ] set the `Work Item Type` as `Chore`
+            - [ ] set the `Board` as `Live`
+            - [ ] Milestone should be set as current week Friday date, create if not exist (eg: 2022-08-12)
+            
+            </details>
             `
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: 'Monthly login stats report for Trayport',
+              title: 'Weekly DSX User Access Report',
               body: markdowntable
             })
