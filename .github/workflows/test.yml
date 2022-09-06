@@ -29,15 +29,24 @@ jobs:
             
             ## Ticket Checklist
             
-            <details><summary>Checklist</summary>
+            <details>
+            <summary>Checklist</summary>
             
-            - [ ] add ticket to `DSX SRE board`
-            - [ ] set the `Service Class` as `Fixed date`
-            - [ ] set the `Work Item Type` as `Chore`
-            - [ ] set the `Board` as `Live`
+            - [ ] add ticket to DSX SRE board
+            - [ ] set the Service Class as Fixed date
+            - [ ] set the Work Item Type as Chore
+            - [ ] set the Board as Live
             - [ ] Milestone should be set as current week Friday date, create if not exist (eg: 2022-08-12)
             
             </details>
+            
+            ## :white_check_mark: Tasks
+            
+            - [ ] send the DSX all User Access Report to the POs
+            
+            ## :checkered_flag: Acceptance Criteria
+            
+            - Weekly DSX all User Access Report is generated and shared with POs.
             `
             await github.rest.issues.create({
               owner: context.repo.owner,
