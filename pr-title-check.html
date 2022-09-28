@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<div>
+<h3>Character count should be 100 for a valid PR title </h3>
+
+<textarea id="txtarea" cols="50" rows="4" onkeyup="charCount()"></textarea></br></br>
+
+<div>
+	<b><label id="lblcount">Count: 0</label></b>
+</div>
+</div>
+
+<script>
+
+function charCount(){
+	var countLabel = document.getElementById("lblcount");
+	var string = document.getElementById("txtarea").value;
+	
+	countLabel.innerHTML = string.length != 0 ? "Count: " + string.length : "Count: " + 0;
+}
+
+</script>
+<html>
