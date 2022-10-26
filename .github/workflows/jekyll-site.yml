@@ -16,8 +16,8 @@ jobs:
       uses: actions/jekyll-build-pages@v1.0.5
       with:
     # Directory where the source files reside.
-        source: ./app/
+        source: docs/app/
     # Output directory of the build. Although it can be nested inside the source, it cannot be the same as the source directory.
-        destination: ./output_site    
+        destination: docs/ 
     # GitHub token
         token: ${{ github.token }}
