@@ -18,6 +18,6 @@ jobs:
     # Directory where the source files reside.
         source: docs/app/
     # Output directory of the build. Although it can be nested inside the source, it cannot be the same as the source directory.
-        destination: _site/ 
+        destination: output/ 
     # GitHub token
         token: ${{ github.token }}
