@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'docs/app/*'
+      - 'docs/index.md'
     branches:
       - main
 
@@ -19,7 +20,7 @@ jobs:
       - name: Build Jekyll for GitHub Pages
         uses: actions/jekyll-build-pages@v1.0.5
         with:   
-          source: docs/app/   
+          source: docs/ 
           destination: output/ 
       - name: Build And Deploy
         id: builddeploy
