@@ -33,7 +33,7 @@ layout: brochure_home
   <a href="./brochure/assets/brochure/download_page.html"
     id="dsx-weblink"
     class="col-auto d-none d-md-flex">
-   <img src="./brochure/assets/brochure/images/website-dsx.svg"
+   <img src="./brochure/assets/images/website-dsx.svg"
      alt="Internal Shell Website for DSX"
      id="dsx-website">
   </a>
