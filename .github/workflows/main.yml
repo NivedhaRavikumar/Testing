@@ -1,0 +1,9 @@
+on:
+  pull_request:
+    types:
+      - closed
+uses: pritishvaidya/github-project-board-automation@0.0.1.9
+  with:  
+    projects: https://github.com/users/NivedhaRavikumar/projects/2/views/1  
+    column: Cycle
+    action: |
