@@ -1,4 +1,5 @@
 title: "Discussion"
+name: "Discussion"
 labels: ["General Introduction"]
 body:
   - type: markdown
