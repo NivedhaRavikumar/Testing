@@ -1,0 +1,46 @@
+title: "Discussion"
+labels: ["General Introduction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+
+## Participants
+
+@h3nllp, @kachirajus, Akshay Chandra, @sais8, @sujith475 and @markbirbeck
+
+Sick leave: @phillipharrison
+
+## Agenda
+
+## Discussion
+
+Akshay said that the testers would look at a sample of tickets. They would want to see the links between the tickets, the meeting notes that discussed those tickets, and supporting resources.
+
+Akshay said that the previous meeting didn't have the complete evidences so that is being reviewed today.
+
+Henal talked through the minutes from the latest incident review meeting. We seem to have captured most of the required information, but Akshay suggested a few additional things that could appear in these minutes:
+
+- any items that are carried over from the previous week should be clearly highlighted;
+- any breaches of SLA should be flagged up as soon as they are spotted;
+- there should be a list of participants. Since there are certain people who must be there, we can simply indicate when someone is _not_ there (if that is easier). The 'must attend' people need to send a delegate if they are away;
+- there should be a list of the KPIs that we are tracking, and their values for that week.
+
+Henal suggested creating a template in GitHub. Henal and Mark will work on this.
+
+## Issues
+
+## Decisions
+
+- the meeting template will contain participants who _should_ be there. if anyone can't attend they must delegate
+- the meeting template will contain a table of KPIs
+
+## Action Items
+
+- @h3nllp and @markbirbeck to look at creating a template for the weekly meeting
+
+## Additional Notes
+
+A screenshot shared by Akshay:
+
+![MicrosoftTeams-image](https://user-images.githubusercontent.com/62572/210816146-c89eee76-4bcd-4a7f-98a7-618ea83435b7.png)
