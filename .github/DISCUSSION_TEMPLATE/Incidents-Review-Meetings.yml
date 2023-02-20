@@ -4,7 +4,7 @@ body:
   - type: markdown
     attributes:
       value: |
-
+`
 ## Participants
 
 Add participants
@@ -42,3 +42,4 @@ Henal suggested creating a template in GitHub. Henal and Mark will work on this.
 A screenshot shared by Akshay:
 
 ![MicrosoftTeams-image](https://user-images.githubusercontent.com/62572/210816146-c89eee76-4bcd-4a7f-98a7-618ea83435b7.png)
+`
