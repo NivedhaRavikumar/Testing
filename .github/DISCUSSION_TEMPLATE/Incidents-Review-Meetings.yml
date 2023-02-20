@@ -3,8 +3,7 @@ labels: ["General Introduction"]
 body:
   - type: markdown
     attributes:
-      value: 
-"
+      value: "\n
 ## Participants
 
 Add participants
