@@ -5,7 +5,12 @@ body:
     attributes:
       value: |
         ## Participants
-
+  - type: textarea
+    id: participants
+    attributes:
+      label: Participants
+      description: "List of Participants"
+      value: |
         @h3nllp, @kachirajus, Akshay Chandra, @sais8, @sujith475 and @markbirbeck
 
         Sick leave: @phillipharrison
@@ -43,11 +48,4 @@ body:
         - label: This one!
           required: true
         - label: I won't stop you if you check this one, too
-  - type: markdown
-    attributes:
-      value: |
-        ## Participants
-
-        @h3nllp, @kachirajus, Akshay Chandra, @sais8, @sujith475 and @markbirbeck
-
-        Sick leave: @phillipharrison 
+ 
