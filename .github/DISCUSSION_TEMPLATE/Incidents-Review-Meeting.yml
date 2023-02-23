@@ -14,6 +14,7 @@ body:
         Mandatory Attendees:
         1. @sais8
         2. @phillipharrison
+        
         Other Possible Attendees:
         1. @abhilashnallabelli
         2. @mathivanan-nb
@@ -47,7 +48,7 @@ body:
       description: "KPI"
       label: KPI
       value: |
-        Details of how the KPIs are calculated are in #4663, in this comment. Details of the SLA threshold calculations are in this comment. The SLO threshold calculations are described in this comment.
+        Details of how the KPIs are calculated are in #4663, in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1344066799). Details of the SLA threshold calculations are in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1345692195). The SLO threshold calculations are described in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1345702295).
         ![image](https://user-images.githubusercontent.com/97517965/213198522-1f75bf69-3da7-4626-a412-8cce483409f7.png)
   - type: markdown
     attributes:
@@ -56,7 +57,7 @@ body:
   - type: textarea
     id: Discussion
     attributes:      
-      description: "Discussion"
+      description: "Discussion regarding the Incident"
       label: Discussion
       value: |
         Please add the discussed points here.
@@ -67,8 +68,8 @@ body:
   - type: textarea
     id: Issues
     attributes:      
-      description: "Issues"
-      label: issues
+      description: "What are the Issues faced during the Incident?"
+      label: Issues
       value: |    
         Please add the details of issues faced.
   - type: markdown
@@ -78,10 +79,10 @@ body:
   - type: textarea
     id: Decisions
     attributes:      
-      description: "Decisions"
-      label: decisions
+      description: "What are the Decisions made?"
+      label: Decisions
       value: |
-        - Please add the details regarding the decisions taken.
+        Please add the details regarding the decisions taken.
   - type: markdown
     attributes:
       value: |  
@@ -89,8 +90,8 @@ body:
   - type: textarea
     id: ActionItems
     attributes:      
-      description: "Action Items"
-      label: items
+      description: "what are the Action Items?"
+      label: Action Items
       value: |
         Please add the Action items
   - type: markdown
@@ -101,7 +102,7 @@ body:
     id: notes
     attributes:      
       description: "Additional Notes"
-      label: notes
+      label: Additional Notes
       value: |
         Please add additional notes
   
