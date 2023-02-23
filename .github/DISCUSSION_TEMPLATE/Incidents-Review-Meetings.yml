@@ -6,65 +6,36 @@ body:
       value: |
         ## Participants
 
-@h3nllp, @kachirajus, Akshay Chandra, @sais8, @sujith475 and @markbirbeck
+        @h3nllp, @kachirajus, Akshay Chandra, @sais8, @sujith475 and @markbirbeck
 
-Sick leave: @phillipharrison
+        Sick leave: @phillipharrison
 
-## Agenda
+        ## Agenda
 
-## Discussion
+        ## Discussion
 
-Akshay said that the testers would look at a sample of tickets. They would want to see the links between the tickets, the meeting notes that discussed those tickets, and supporting resources.
+        Akshay said that the testers would look at a sample of tickets. They would want to see the links between the tickets, the meeting notes that discussed those tickets, and supporting resources.
 
-Akshay said that the previous meeting didn't have the complete evidences so that is being reviewed today.
+        Akshay said that the previous meeting didn't have the complete evidences so that is being reviewed today.
 
-Sai showed a recent incident in PagerDuty (59). The incident still shows a duration of 4h 23m but this is wrong (a P2 should be resolved in 4 hours). Also, the incident was not created in PagerDuty until 2023-01-03, although the issue was on 2022-12-23.
+        Henal talked through the minutes from the latest incident review meeting. We seem to have captured most of the required information, but Akshay suggested a few additional things that could appear in these minutes:
 
-Akshay stressed that if there is a process defined in the service design document, it needs to be followed. Otherwise the testers will not have a benchmark. This incident would be classed as a 'deviation' since the process was not followed (the siren emoji was added late).
+        ## Issues
 
-Henal and Sujith stressed that this is a new process, and we are still putting training and policies into place. Mark added that the deviation was already discussed in our weekly incident review, so that would be part of the collection of information that feeds into the testers.
+        ## Decisions
 
-Akshay asked whether the list of 'incidents like this one' that PagerDuty provides would feed into the checks for repeating problems. Henal confirmed that we would definitely be using this information.
+        - the meeting template will contain participants who _should_ be there. if anyone can't attend they must delegate
+        - the meeting template will contain a table of KPIs
 
-Akshay suggested that we should provide a list of historical incidents to the testers.
+        ## Action Items
 
-Henal talked through the minutes from the latest incident review meeting. We seem to have captured most of the required information, but Akshay suggested a few additional things that could appear in these minutes:
+        - @h3nllp and @markbirbeck to look at creating a template for the weekly meeting
 
-- any items that are carried over from the previous week should be clearly highlighted;
-- any breaches of SLA should be flagged up as soon as they are spotted;
-- there should be a list of participants. Since there are certain people who must be there, we can simply indicate when someone is _not_ there (if that is easier). The 'must attend' people need to send a delegate if they are away;
-- there should be a list of the KPIs that we are tracking, and their values for that week.
+        ## Additional Notes
 
-Henal suggested creating a template in GitHub. Henal and Mark will work on this.
+        A screenshot shared by Akshay:
 
-Mark asked about how and when the reviews happen. Akshay described the steps for a review:
-
-- there will be a design-level check to get the control into place. This is mandatory and will probably happen in the next week or so;
-- once the control is operational and is in _Collective_, there will be periodic checks. Since we are meeting once a week, the checks may be 6-monthly or annual;
-- in the process (called _Operating Effectiveness Meeting_.), they would:
-  - request a list of items from PagerDuty during a specified period;
-  - request details on 5-10 incidents from that period, which will include:
-    - screenshots of meeting minutes
-    - screenshots of status in PagerDuty
-
-Henal mentioned that from a previous meeting the decision was that Phillip and Sai would be the mandatory people, with Phillip as chair and Sai as minute-taker.
-
-## Issues
-
-## Decisions
-
-- the meeting template will contain participants who _should_ be there. if anyone can't attend they must delegate
-- the meeting template will contain a table of KPIs
-
-## Action Items
-
-- @h3nllp and @markbirbeck to look at creating a template for the weekly meeting
-
-## Additional Notes
-
-A screenshot shared by Akshay:
-
-![MicrosoftTeams-image](https://user-images.githubusercontent.com/62572/210816146-c89eee76-4bcd-4a7f-98a7-618ea83435b7.png)
+        ![MicrosoftTeams-image](https://user-images.githubusercontent.com/62572/210816146-c89eee76-4bcd-4a7f-98a7-618ea83435b7.png)
   - type: checkboxes
     attributes:
       label: Check that box!
