@@ -23,6 +23,8 @@ body:
         5. @markbirbeck
         6. @h3nllp
         7. @sankarshell
+        
+        Note: If any of the mandatory attendees are not available, please delegate the role to someone in possible attendees.
   - type: markdown
     attributes:
       value: |        
@@ -47,9 +49,9 @@ body:
     attributes:      
       description: "KPI"
       label: KPI
-      value: |
-        Details of how the KPIs are calculated are in #4663, in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1344066799). Details of the SLA threshold calculations are in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1345692195). The SLO threshold calculations are described in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1345702295).
+      value: |        
         ![image](https://user-images.githubusercontent.com/97517965/213198522-1f75bf69-3da7-4626-a412-8cce483409f7.png)
+        Details of how the KPIs are calculated are in #4663, in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1344066799). Details of the SLA threshold calculations are in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1345692195). The SLO threshold calculations are described in [this comment](https://github.com/sede-x/dsx-monorepo/issues/4663#issuecomment-1345702295).
   - type: markdown
     attributes:
       value: | 
