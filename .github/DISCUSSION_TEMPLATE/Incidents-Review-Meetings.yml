@@ -15,4 +15,4 @@ body:
         2. data2
       render: bash
     validations:
-      required: true
+      required: false
