@@ -6,15 +6,22 @@ body:
       value: |
         ## Participants
   - type: textarea
-    id: participants
+    id: Participants
     attributes:      
-      description: "List of Participants"
-      label: participants
+      description: "List of Participants for the Review Meeting"
+      label: Participants
       value: |
-        @h3nllp, @kachirajus, Akshay Chandra, @sais8, @sujith475 and @markbirbeck
-
-        Sick leave: @phillipharrison
-  
+        Mandatory Attendees:
+        1. @sais8
+        2. @phillipharrison
+        Other Possible Attendees:
+        1. @abhilashnallabelli
+        2. @mathivanan-nb
+        3. @sujith475
+        4. @AG-Vashisth
+        5. @markbirbeck
+        6. @h3nllp
+        7. @sankarshell
   - type: markdown
     attributes:
       value: |        
@@ -22,10 +29,26 @@ body:
   - type: textarea
     id: Agenda
     attributes:      
-      description: "Agenda"
+      description: "Agenda of the Meeting"
       label: Agenda
       value: |
-        enter value 
+        1. Closed BUT delayed incident closure
+        2. Recurring incidents (which ideally would be classified as problems)
+        3. Open incidents at the time of review, ensure the Priority of the incident is documented in the notes. If there are P1 or P2 open at the time of this meeting, they should be observed and reported on daily until closure.
+        4. Impact of KPIs defined - i.e. system down time etc,
+        5. Action items - what actions have been / are required to be taken - Eg: Raise a finding etc
+  - type: markdown
+    attributes:
+      value: | 
+        ## KPI
+  - type: textarea
+    id: KPI
+    attributes:      
+      description: "KPI"
+      label: KPI
+      value: |
+        Details of how the KPIs are calculated are in #4663, in this comment. Details of the SLA threshold calculations are in this comment. The SLO threshold calculations are described in this comment.
+        ![image](https://user-images.githubusercontent.com/97517965/213198522-1f75bf69-3da7-4626-a412-8cce483409f7.png)
   - type: markdown
     attributes:
       value: | 
@@ -34,14 +57,9 @@ body:
     id: Discussion
     attributes:      
       description: "Discussion"
-      label: discussion
+      label: Discussion
       value: |
-        Akshay said that the testers would look at a sample of tickets. They would want to see the links between the tickets, the meeting notes that discussed those tickets, and supporting resources.
-
-        Akshay said that the previous meeting didn't have the complete evidences so that is being reviewed today.
-
-        Henal talked through the minutes from the latest incident review meeting. We seem to have captured most of the required information, but Akshay suggested a few additional things that could appear in these minutes:
- 
+        Please add the discussed points here.
   - type: markdown
     attributes:
       value: | 
@@ -52,7 +70,7 @@ body:
       description: "Issues"
       label: issues
       value: |    
-        enter value
+        Please add the details of issues faced.
   - type: markdown
     attributes:
       value: | 
@@ -63,8 +81,7 @@ body:
       description: "Decisions"
       label: decisions
       value: |
-        - the meeting template will contain participants who _should_ be there. if anyone can't attend they must delegate
-        - the meeting template will contain a table of KPIs
+        - Please add the details regarding the decisions taken.
   - type: markdown
     attributes:
       value: |  
@@ -75,7 +92,7 @@ body:
       description: "Action Items"
       label: items
       value: |
-        - @h3nllp and @markbirbeck to look at creating a template for the weekly meeting
+        Please add the Action items
   - type: markdown
     attributes:
       value: | 
@@ -86,7 +103,5 @@ body:
       description: "Additional Notes"
       label: notes
       value: |
-        A screenshot shared by Akshay:
-
-        ![MicrosoftTeams-image](https://user-images.githubusercontent.com/62572/210816146-c89eee76-4bcd-4a7f-98a7-618ea83435b7.png)
+        Please add additional notes
   
