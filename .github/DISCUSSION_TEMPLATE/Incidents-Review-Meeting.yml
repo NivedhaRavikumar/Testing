@@ -90,7 +90,7 @@ body:
   - type: textarea
     id: ActionItems
     attributes:      
-      description: "what are the Action Items?"
+      description: "What are the Action Items?"
       label: Action Items
       value: |
         Please add the Action items
