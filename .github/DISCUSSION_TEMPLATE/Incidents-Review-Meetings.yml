@@ -1,11 +1,18 @@
 title: "Discussion"
-name: "Discussion"
 labels: ["General Introduction"]
 body:
   - type: markdown
     attributes:
-      value: "## Participants"
-
+      value: |
+        This is text that will show up in the template!
   - type: textarea
+    id: improvements
     attributes:
-    label: "Add participants"
+      label: Top 3 improvements
+      description: "What are the top 3 improvements we could make to this project?"
+      value: |
+        1. data1
+        2. data2
+      render: bash
+    validations:
+      required: true
