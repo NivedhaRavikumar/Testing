@@ -43,3 +43,11 @@ body:
         - label: This one!
           required: true
         - label: I won't stop you if you check this one, too
+  - type: markdown
+    attributes:
+      value: |
+        ## Participants
+
+        @h3nllp, @kachirajus, Akshay Chandra, @sais8, @sujith475 and @markbirbeck
+
+        Sick leave: @phillipharrison 
