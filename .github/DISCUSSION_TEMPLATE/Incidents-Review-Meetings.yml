@@ -5,4 +5,11 @@ body:
     attributes:
       value: |
         This is text that will show up in the template!
-  
+        Thanks
+  - type: checkboxes
+    attributes:
+      label: Check that box!
+      options:
+        - label: This one!
+          required: true
+        - label: I won't stop you if you check this one, too
