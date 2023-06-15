@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/stale@v4
         with:
+          project: Sample
           days-before-close: -1
           days-before-stale: 0
           exempt-pr-labels: 'blocked :no_entry_sign:,help wanted :raised_hand:'
