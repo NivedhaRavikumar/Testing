@@ -13,9 +13,10 @@ jobs:
       pull-requests: write
       contents: read
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/stale@v4
         with:
-          query: 'repo:sede-x/dsx-monorepo is:issue project:NivedhaRavikumar/projects/2/views/1 state:open -label:stuck'
+          search: repo:sede-x/dsx-monorepo is:issue project:NivedhaRavikumar/projects/2/views/1 state:open -label:stuck
           days-before-close: -1
           days-before-stale: 0
           exempt-pr-labels: 'blocked :no_entry_sign:,help wanted :raised_hand:'
