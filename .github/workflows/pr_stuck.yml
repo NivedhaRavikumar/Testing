@@ -6,18 +6,26 @@ on:
       - main
 
 jobs:
-  label_issues:
+  stale:
     runs-on: ubuntu-latest
-    permissions:
+    permissions:      
       issues: write
+      pull-requests: write
+      contents: read
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/checkout@v2
         with:
-          script: |
-            github.rest.issues.addLabels({
-              search: 'users:NivedhaRavikumar is:issue project:projects/2/views/1 state:open -label:stuck',
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ["stuck"]
-            })
+          search: 'users:NivedhaRavikumar is:issue project:projects/2/views/1 state:open -label:stuck'
+      - uses: actions/stale@v4
+        with:          
+          days-before-close: -1
+          days-before-stale: 0
+          exempt-pr-labels: 'blocked :no_entry_sign:,help wanted :raised_hand:'
+          stale-pr-label: stuck
+          stale-pr-message: >-
+            This PR is stuck, since it hasn't been touched for 3 days.
+            
+            If progress has been made then please add a comment and remove the `stuck` label.
+            
+            Otherwise this ticket should be discussed in the standup and resources allocated
+            in order to keep it moving.
