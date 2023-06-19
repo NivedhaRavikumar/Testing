@@ -15,7 +15,7 @@ jobs:
         with:
           script: |
             github.rest.issues.addLabels({
-              search: repo:sede-x/dsx-monorepo is:issue project:NivedhaRavikumar/projects/2/views/1 state:open -label:stuck
+              search: repo:sede-x/dsx-monorepo is:issue project:NivedhaRavikumar/projects/2/views/1 state:open -label:stuck,
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
