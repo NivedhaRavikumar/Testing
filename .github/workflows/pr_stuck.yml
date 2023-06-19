@@ -13,9 +13,12 @@ jobs:
       pull-requests: write
       contents: read
     steps:
-      - uses: actions/checkout@v2
+     
+      - uses: lee-dohm/select-matching-issues@v1
         with:
-          search: 'users:NivedhaRavikumar is:issue project:projects/2/views/1 state:open -label:stuck'
+          query: 'users:NivedhaRavikumar is:issue project:projects/2/views/1 state:open -label:stuck'
+          token: ${{ github.token }}
+          #search: 'users:NivedhaRavikumar is:issue project:projects/2/views/1 state:open -label:stuck'
       - uses: actions/stale@v4
         with:          
           days-before-close: -1
