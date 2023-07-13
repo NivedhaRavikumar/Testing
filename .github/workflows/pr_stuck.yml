@@ -13,14 +13,14 @@ jobs:
       pull-requests: write
       contents: read
     steps:
-     
-      - uses: lee-dohm/select-matching-issues@v1
+      - name: Get the list
+        uses: lee-dohm/select-matching-issues@v1
         id: stuck
         with:
           query: 'users:NivedhaRavikumar is:issue project:projects/2/views/1 state:open -label:stuck'
           token: ${{ github.token }}
          
-      - uses: actions/checkout@v2
+      - name: Display the list of issues
         run: cat ${{ steps.stuck.outputs.path }}
       - uses: actions/stale@v4
         with:          
