@@ -5,8 +5,8 @@ const main = () => {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`)
 
-  const search = core.getInput('search')
-  console.log(`Query ${search}`)
+  const query = core.getInput('query')
+  console.log(`Query ${query}`)
 
   /**
    * The token as provided in the YAML workflow.
@@ -18,20 +18,20 @@ const main = () => {
   const octokit = github.getOctokit(token)
 
   const query = `
-    query ($search: String!) {
-      search(first: 5, query: $search, type: ISSUE) {
-        repositoryCount
-        nodes {
-          ... on Issue {
-            number
-            title
-            updatedAt
-          }
-        }
+    query ($query: String!) {
+  search(first: 100, query: $query, type: ISSUE) {    
+    repositoryCount
+    nodes {
+      ... on Issue {
+        number
+        title
+        updatedAt
       }
     }
+  }
+}
   `
-  const variables = { search }
+  const variables = { query }
 
   octokit
     .graphql(query, variables)
