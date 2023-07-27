@@ -1,0 +1,12 @@
+name: Stuck
+description: Indicate that an issue has not been touched for a few days.
+inputs:
+  query:
+    description: Query to run.
+    required: true
+outputs:
+  count:
+    description: Number of issues updated
+runs:
+  using: node12
+  main: dist/index.js
