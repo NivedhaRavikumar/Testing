@@ -1,6 +1,8 @@
 name: 'Task: Check Stuck Issues'
 
-on: [pull_request]
+on:
+  push:
+    branches: [ "main" ]
 
 jobs:
   stale:
