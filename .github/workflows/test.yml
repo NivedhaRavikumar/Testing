@@ -14,7 +14,7 @@ jobs:
         with:
           days-before-close: -1
           days-before-stale: 3
-          query: repo:users/NivedhaRavikumar is:issue project:users/NivedhaRavikumar/projects/2/views/1 state:open -label:stuck updated:<=2023-07-27
+          query: repo:users/NivedhaRavikumar is:issue project:users/NivedhaRavikumar/projects/2 state:open -label:stuck updated:<=2023-07-27
           stale-issue-label: stuck
           stale-issue-message: 'This issue is stuck. It has not been touched for 3 days. Either update it, or move it to the backlog.'
           token: ${{ secrets.GITHUB_TOKEN }}
