@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information</title>
+</head>
+<body>
+    <h1>User Information</h1>
+    <div id="userInfo"></div>
+    <script>
+        function fetchUserInfo() {
+            fetch('/user-info') // Fetching user information from the backend
+                .then(response => response.json())
+                .then(data => {
+                    // Displaying the fetched user information in the browser
+                    document.getElementById('userInfo').innerHTML = `
+                        <p><strong>Username:</strong> ${data.username}</p>
+                        <p><strong>Email:</strong> ${data.email}</p>
+                        <p><strong>Mobile:</strong> ${data.mobile}</p>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        // Fetch user information when the page loads
+        fetchUserInfo();
+    </script>
+</body>
+</html>
