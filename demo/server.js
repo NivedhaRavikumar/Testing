@@ -1,8 +1,3 @@
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-
 const express = require('express');
 const app = express();
 // Simulated data from Kubernetes ConfigMap and Secret
@@ -28,7 +23,7 @@ app.get('/user-info', (req, res) => {
     // Sending the HTML content with the injected values to the client
     res.send(userInfoHtml);
 });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT ||3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
