@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 # Install app dependencies
 RUN npm install
+RUN npm install express
 # Copy server and HTML files to the container
 COPY server.js .
 COPY index.html .
