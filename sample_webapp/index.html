@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MongoDB Connection Test</title>
+</head>
+<body>
+    <h1>MongoDB Connection Status</h1>
+    <div id="connectionStatus"></div>
+    <script>
+        fetch('/mongodb') // Fetching MongoDB connection status from the backend
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('connectionStatus').innerText = 'Connected to MongoDB';
+                } else {
+                    document.getElementById('connectionStatus').innerText = 'Error connecting to MongoDB';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
