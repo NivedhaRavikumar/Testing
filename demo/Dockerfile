@@ -9,7 +9,7 @@ RUN npm install
 # Copy backend files to the container
 COPY server.js .
 # Copy frontend files to the container
-COPY index.html .
+# COPY index.html .
 # Expose the port the app runs on
 EXPOSE 3000
 # Command to run the application
