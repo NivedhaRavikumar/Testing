@@ -7,9 +7,9 @@ const mobileFromSecret = "**********"; // Replace with actual data retrieved fro
 app.get('/user-info', (req, res) => {
     // Endpoint to serve user information to the frontend
     res.json({
-        username: usernameFromConfigMap,
-        email: emailFromConfigMap,
-        mobile: mobileFromSecret
+        username: process.env.username,
+        email: process.env.email,
+        mobile: process.env.mobile
     });
 });
 const PORT = process.env.PORT || 3000;
