@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: demo-config
-data:
-  email: "nivedha.ravikumar123@example.com"
-  username: "Nivedha Ravikumar"
