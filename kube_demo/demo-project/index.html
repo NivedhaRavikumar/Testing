@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <title>User Information</title>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:SAEFCountryOfJurisdictionTaxHTField0 msdt:dt="string">INDIA|4ded46e1-ccd8-4858-b48b-0edb9f44aedd</mso:SAEFCountryOfJurisdictionTaxHTField0>
+<mso:SAEFLegalEntityTaxHTField0 msdt:dt="string">Accenture Inc|c63e386f-c810-4d1e-936d-d2aacead121d</mso:SAEFLegalEntityTaxHTField0>
+<mso:TaxCatchAll msdt:dt="string">3;#INDIA;#2;#Accenture Inc;#1;#Confidential</mso:TaxCatchAll>
+<mso:SAEFSecurityClassificationTaxHTField0 msdt:dt="string">Confidential|e4bc29b2-6e76-48cc-b090-8b544c0802ae</mso:SAEFSecurityClassificationTaxHTField0>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <h1>User Information</h1>
+    <div id="userInfo"></div>
+    <script>
+        function fetchUserInfo() {
+            fetch('/user-info') // Fetching user information from the backend
+                .then(response => response.json())
+                .then(data => {
+                    // Displaying the fetched user information in the browser
+                    document.getElementById('userInfo').innerHTML = `
+                        <p><strong>Username:</strong> ${data.username}</p>
+                        <p><strong>Email:</strong> ${data.email}</p>
+                        <p><strong>Mobile:</strong> ${data.mobile}</p>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        // Fetch user information when the page loads
+        fetchUserInfo();
+    </script>
+</body>
+</html>
